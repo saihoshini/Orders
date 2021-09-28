@@ -1,0 +1,139 @@
+package com.pack.service;
+
+import java.awt.print.Book;
+import java.util.List;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+/*import com.pack.bean.Admin;
+import com.pack.bean.Adminreg;*/
+import com.pack.bean.Login;
+
+import com.pack.bean.NewUser;
+
+import com.pack.bean.ordering;
+/*import com.pack.bean.booking;*/
+import com.pack.dao.UserDao;
+@Service
+@Transactional
+public class UserServiceImpl implements UserService{
+ 
+	@Autowired
+	private UserDao userDao;
+	@Override
+	public void saveUser(NewUser u) {
+		userDao.saveUser(u);
+	}
+
+	
+
+	@Override
+	public boolean fetchUser(Login log) {
+		boolean b=userDao.fetchUser(log);
+		return b;
+	}
+
+	/*@Override
+	public List<booking> fetchbook(){
+		List<booking> b=userDao.fetchbook();
+		return b;
+	}
+*/
+
+	
+
+
+
+	/*@Override
+	public boolean fetchadmin(Admin log) {
+		// TODO Auto-generated method stub
+		boolean b=userDao.fetchadmin(log);
+		return b;
+		
+	}
+
+
+
+	@Override
+	public void saveUser1(Adminreg reg) {
+		// TODO Auto-generated method stub
+		userDao.saveUser1(reg);
+	
+		
+	}*/
+
+
+
+	
+
+
+	
+
+
+
+	
+
+
+	/*@Override
+	public void bookUser(booking b) {
+		// TODO Auto-generated method stub
+		userDao.bookUser(b);
+	}
+
+*/
+/*
+	@Override
+	public List fetchbook() {
+		// TODO Auto-generated method stub
+		List<booking> list = userDao.fetchbook();
+		return list;
+	}*/
+
+
+
+/*	@Override
+	public void update(booking b) {
+		// TODO Auto-generated method stub
+		
+	}*/
+
+
+
+	@Override
+	public void orderUser(ordering o) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	@Override
+	public List<ordering> fetchorder() {
+		// TODO Auto-generated method stub
+		List<ordering> o=userDao.fetchorder();
+		return o;
+		
+	}
+
+
+
+	
+
+
+
+	
+
+
+
+
+
+
+
+	
+
+
+	
+}

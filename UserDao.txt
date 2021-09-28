@@ -1,0 +1,41 @@
+package com.pack.dao;
+
+import java.util.List;
+
+/*import java.awt.print.Book;*/
+/*import java.util.List;
+*/
+/*import com.pack.bean.Admin;
+import com.pack.bean.Adminreg;*/
+import com.pack.bean.Login;
+
+import com.pack.bean.NewUser;
+
+import com.pack.bean.ordering;
+
+
+public interface UserDao {
+boolean fetchUser(Login log);
+
+public void saveUser(NewUser user);
+
+
+
+/*public boolean fetchadmin(Admin log);
+
+public void saveUser1(Adminreg reg);
+*/
+/*public void bookUser(booking b);
+
+public List<booking> fetchbook();
+*/
+List<ordering> fetchorder();
+
+
+
+
+
+
+
+
+}

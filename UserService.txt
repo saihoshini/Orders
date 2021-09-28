@@ -1,0 +1,63 @@
+package com.pack.service;
+
+import java.awt.print.Book;
+import java.util.List;
+
+/*import com.pack.bean.Admin;
+import com.pack.bean.Adminreg;*/
+import com.pack.bean.Login;
+
+import com.pack.bean.NewUser;
+
+import com.pack.bean.ordering;
+
+
+
+public interface UserService {
+public  void saveUser(NewUser u) ;
+
+public boolean fetchUser(Login log);
+
+/*public boolean fetchadmin(Admin log);
+
+public void saveUser1(Adminreg reg);
+*/
+
+
+/*public void bookUser(booking b);*/
+
+
+
+/*public List<booking> fetchbook();
+*/
+/*public void update(booking b);
+*/
+public void orderUser(ordering o);
+
+public List<ordering> fetchorder();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+

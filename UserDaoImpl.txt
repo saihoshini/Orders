@@ -1,0 +1,110 @@
+package com.pack.dao;
+import java.awt.print.Book;
+import java.util.List;
+import org.hibernate.Query;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.stereotype.Repository;
+
+/*import com.pack.bean.Admin;
+import com.pack.bean.Adminreg;*/
+//import com.pack.bean.Details;
+import com.pack.bean.Login;
+
+import com.pack.bean.NewUser;
+
+import com.pack.bean.ordering;
+
+
+@Repository
+public class UserDaoImpl implements UserDao{
+	
+	@Autowired
+	private SessionFactory sessionFactory;
+	
+	
+@Override
+public void saveUser(NewUser user){
+	System.out.println("Inside dao");
+	sessionFactory.getCurrentSession().save(user);
+	
+}
+
+@Override
+public boolean fetchUser(Login l) {
+	boolean b=false;
+	Query q=sessionFactory.getCurrentSession().createQuery("from NewUser");
+	List<NewUser> list=q.list();
+	for(NewUser u:list)
+	{
+		if(u.getName().equals(l.getName())&& u.getPassword().equals(l.getPassword()))
+		{
+			b=true;
+		}
+	}
+	return b;
+}
+
+@Override
+public List<ordering> fetchorder() {
+	// TODO Auto-generated method stub
+	Query q=sessionFactory.getCurrentSession().createQuery("from ordering");
+	List<ordering> list=q.list();
+	return list;
+	
+}
+
+
+
+/*@Override
+public boolean fetchadmin(Admin log) {
+	// TODO Auto-generated method stub
+boolean b=false;
+	
+	Query q=sessionFactory.getCurrentSession().createQuery("from Adminreg");
+	List<Adminreg> list=q.list();
+	for(Adminreg u:list)
+	{
+		if(u.getName().equals(log.getName())&& u.getPassword().equals(log.getPassword()))
+		{
+			b=true;
+		}
+	}
+	
+	return b;
+	
+}
+
+@Override
+public void saveUser1(Adminreg reg) {
+	// TODO Auto-generated method stub
+	System.out.println("Inside dao");
+	sessionFactory.getCurrentSession().save(reg);
+	
+}
+*/
+/*@Override
+public void bookUser(booking b) {
+	// TODO Auto-generated method stub
+	System.out.println("Inside dao");
+	sessionFactory.getCurrentSession().save(b);
+	
+}*/
+
+/*@Override
+public List<booking> fetchbook() {
+	// TODO Auto-generated method stub
+	Query q=sessionFactory.getCurrentSession().createQuery("from booking");
+	List<booking> list=q.list();
+	return list;
+	
+}
+*/
+
+
+
+
+}
+
+ 
